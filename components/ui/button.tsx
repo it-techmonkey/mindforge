@@ -27,7 +27,7 @@ const sizes = {
 };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", size = "default", asChild, children, ...props }, ref) => {
+  ({ className, variant = "primary", size = "default", asChild, children, type = "button", ...props }, ref) => {
     const compClass = cn(base, variants[variant], sizes[size], className);
     if (asChild && children && typeof children === "object" && "type" in children) {
       const child = children as React.ReactElement;
@@ -44,16 +44,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       );
     }
     return (
-      <motion.button
-        ref={ref}
-        className={compClass}
+      <motion.span
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.96 }}
         transition={{ duration: 0.2 }}
-        {...props}
+        className="inline-block"
       >
-        {children}
-      </motion.button>
+        <button
+          ref={ref}
+          type={type}
+          className={compClass}
+          {...props}
+        >
+          {children}
+        </button>
+      </motion.span>
     );
   }
 );
