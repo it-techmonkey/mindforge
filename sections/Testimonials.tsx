@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with MindForge felt like having an in-house team that truly understands our brand. The results speak for themselves — 40% revenue growth.",
+      "Working with MindForge felt like having an in-house team that truly understands our brand. The results speak for themselves.",
     name: "James Carter",
     role: "Founder",
     company: "GreenLeaf Co.",
