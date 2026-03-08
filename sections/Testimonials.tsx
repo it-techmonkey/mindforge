@@ -29,12 +29,14 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-[#FFFFFF] relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent" aria-hidden />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <p className="text-primary font-semibold text-lg mb-3">
@@ -49,11 +51,11 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.blockquote
               key={t.name}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-2xl bg-soft-lavender/20 border border-soft-lavender/40 p-8 flex flex-col h-full"
+              transition={{ duration: 0.7, delay: i * 0.1, ease: "easeOut" }}
+              className="rounded-2xl bg-soft-lavender/20 border border-soft-lavender/40 p-8 flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02] hover:shadow-soft-lg"
             >
               <Quote className="h-10 w-10 text-primary/60 mb-4" aria-hidden />
               <p className="text-charcoal leading-relaxed flex-1 mb-6">

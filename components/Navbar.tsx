@@ -32,7 +32,7 @@ export function Navbar() {
       transition={{ duration: 0.4 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-soft" : "bg-transparent"
+        scrolled ? "bg-[#EAE1E1]/80 backdrop-blur-md shadow-soft" : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-20">
@@ -49,7 +49,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-charcoal/90 hover:text-primary font-medium transition-colors"
+                className="relative text-charcoal/90 hover:text-primary font-medium transition-colors py-1 after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 after:ease-out after:w-0 hover:after:w-full"
               >
                 {link.label}
               </Link>
@@ -94,7 +94,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.25 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl p-6 flex flex-col"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-[#FFFFFF] shadow-2xl p-6 flex flex-col"
             >
               <div className="flex justify-between items-center mb-8">
                 <span className="font-heading text-xl font-bold text-charcoal">

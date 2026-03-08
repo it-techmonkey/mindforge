@@ -32,12 +32,14 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white">
+    <section id="about" className="py-20 md:py-28 bg-[#FFFFFF] relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent" aria-hidden />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <p className="text-primary font-semibold text-lg mb-3">
@@ -52,11 +54,11 @@ export function WhyChooseUs() {
           {features.map((f, i) => (
             <motion.div
               key={f.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="rounded-2xl bg-off-white/60 p-8 border border-soft-lavender/20 hover:border-soft-lavender/50 transition-colors"
+              transition={{ duration: 0.7, delay: i * 0.08, ease: "easeOut" }}
+              className="rounded-2xl bg-off-white/60 p-8 border border-soft-lavender/20 hover:border-soft-lavender/50 transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02] hover:shadow-soft-lg"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
                 <f.icon className="h-6 w-6" />

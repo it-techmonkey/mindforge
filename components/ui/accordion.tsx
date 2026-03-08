@@ -41,7 +41,7 @@ export function AccordionItem({ value, trigger, children }: AccordionItemProps) 
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
             className="overflow-hidden"
           >
             <div className="pb-5 text-[#1A1A1B]/80 leading-relaxed">

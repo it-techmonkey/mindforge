@@ -53,24 +53,25 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 export function Services() {
   return (
-    <section id="services" className="py-20 md:py-28 bg-white">
+    <section id="services" className="py-20 md:py-28 bg-[#FFFFFF] relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent" aria-hidden />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <p className="text-primary font-semibold text-lg mb-3">
@@ -92,7 +93,7 @@ export function Services() {
             <motion.article
               key={s.title}
               variants={item}
-              className="group rounded-2xl bg-off-white/60 hover:bg-white border border-soft-lavender/30 p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1"
+              className="group rounded-2xl bg-off-white/60 hover:bg-[#FFFFFF] border border-soft-lavender/30 p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02]"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
                 <s.icon className="h-6 w-6" />

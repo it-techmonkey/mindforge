@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Accordion, AccordionItem } from "@/components/ui/accordion";
 
 const faqs = [
@@ -31,12 +32,19 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-20 md:py-28 bg-off-white">
+    <section className="py-20 md:py-28 bg-off-white relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading text-3xl md:text-4xl font-semibold text-charcoal text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="font-heading text-3xl md:text-4xl font-semibold text-charcoal text-center mb-12"
+        >
           Frequently Asked Questions
-        </h2>
-        <Accordion className="bg-white rounded-2xl shadow-soft p-6 md:p-8">
+        </motion.h2>
+        <Accordion className="bg-[#FFFFFF] rounded-2xl shadow-soft p-6 md:p-8">
           {faqs.map((faq) => (
             <AccordionItem
               key={faq.value}
