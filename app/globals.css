@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #703043;
+    --primary-hover: #5a2840;
+    --off-white: #EAE1E1;
+    --charcoal: #1A1A1B;
+    --soft-lavender: #C9B7BE;
+    --true-black: #000000;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-off-white text-charcoal antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
