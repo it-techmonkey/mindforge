@@ -32,7 +32,7 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-[#FFFFFF] relative">
+    <section id="about" className="py-16 md:py-24 bg-[#FFFFFF] relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent" aria-hidden />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -40,7 +40,7 @@ export function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          className="text-center max-w-2xl mx-auto mb-12"
         >
           <p className="text-primary font-semibold text-lg mb-3">
             Why Choose Us
@@ -58,9 +58,9 @@ export function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: "easeOut" }}
-              className="rounded-2xl bg-off-white/60 p-8 border border-soft-lavender/20 hover:border-soft-lavender/50 transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02] hover:shadow-soft-lg"
+              className="rounded-lg bg-off-white/60 p-8 border border-soft-lavender/20 hover:border-soft-lavender/50 transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02] hover:shadow-soft-lg"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-5">
                 <f.icon className="h-6 w-6" />
               </div>
               <h3 className="font-heading text-lg font-semibold text-charcoal mb-2">

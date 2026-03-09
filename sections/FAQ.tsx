@@ -32,7 +32,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-20 md:py-28 bg-off-white relative">
+    <section className="py-20 md:py-24 bg-off-white relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/30 to-transparent" aria-hidden />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.h2
@@ -44,7 +44,7 @@ export function FAQ() {
         >
           Frequently Asked Questions
         </motion.h2>
-        <Accordion className="bg-[#FFFFFF] rounded-2xl shadow-soft p-6 md:p-8">
+        <Accordion className="bg-[#FFFFFF] rounded-xl shadow-soft p-6 md:p-8">
           {faqs.map((faq) => (
             <AccordionItem
               key={faq.value}

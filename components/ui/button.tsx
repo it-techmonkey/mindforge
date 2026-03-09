@@ -12,10 +12,10 @@ export interface ButtonProps
 }
 
 const base =
-  "inline-flex items-center justify-center font-semibold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex items-center justify-center font-semibold rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 const variants = {
   primary:
-    "bg-primary text-[#FFFFFF] hover:bg-primary-hover shadow-soft hover:shadow-lg active:scale-[0.96] transition-all duration-300 ease-out",
+    "bg-primary text-[#FFFFFF] hover:opacity-90 shadow-soft hover:shadow-lg active:scale-[0.96] transition-all duration-300 ease-out",
   secondary:
     "border-2 border-primary text-primary bg-transparent hover:bg-primary/5 active:scale-[0.96] transition-all duration-300 ease-out",
   ghost: "text-charcoal hover:bg-soft-lavender/30 transition-all duration-300",
@@ -35,7 +35,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <motion.span
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.96 }}
-          className="inline-block transition-transform duration-300"
+          className="inline-block transition-transform duration-300 tap-highlight-none"
         >
           {React.cloneElement(child, {
             className: cn(compClass, (child.props as { className?: string }).className),
@@ -48,7 +48,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.96 }}
         transition={{ duration: 0.2 }}
-        className="inline-block"
+        className="inline-block tap-highlight-none"
       >
         <button
           ref={ref}

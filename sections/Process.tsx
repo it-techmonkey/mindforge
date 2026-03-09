@@ -5,86 +5,87 @@ import { Search, Lightbulb, Rocket, TrendingUp } from "lucide-react";
 
 const steps = [
   {
-    number: "01",
+    number: "1",
     title: "Discovery",
     description:
       "We dive deep into your business, audience, and goals to build a clear picture of where you are and where you want to be.",
     icon: Search,
   },
   {
-    number: "02",
+    number: "2",
     title: "Strategy",
     description:
       "A tailored roadmap: channels, messaging, and KPIs aligned with your growth targets and budget.",
     icon: Lightbulb,
   },
   {
-    number: "03",
+    number: "3",
     title: "Execution",
     description:
       "Our team brings the plan to life with creative campaigns, optimizations, and continuous testing.",
     icon: Rocket,
   },
   {
-    number: "04",
+    number: "4",
     title: "Scaling",
     description:
-      "We double down on what works, refine what doesn’t, and scale your wins for long-term growth.",
+      "We double down on what works, refine what doesn't, and scale your wins for long-term growth.",
     icon: TrendingUp,
   },
 ];
 
 export function Process() {
   return (
-    <section className="py-20 md:py-28 bg-off-white relative">
+    <section className="py-20 md:py-24 bg-off-white relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent" aria-hidden />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <motion.header
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
         >
-          <p className="text-primary font-semibold text-lg mb-3">
-            How It Works
+          <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">
+            How it works
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-semibold text-charcoal">
-            Our 4-Step Process
+            Our 4-step process
           </h2>
-        </motion.div>
+        </motion.header>
 
         <div className="relative">
-          {/* Desktop: horizontal timeline line */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-soft-lavender/50" />
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          {/* Vertical line */}
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-soft-lavender/50" />
+          <ul className="space-y-12 md:space-y-16">
             {steps.map((step, i) => (
-              <motion.article
+              <motion.li
                 key={step.number}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.7, delay: i * 0.1, ease: "easeOut" }}
-                className="relative"
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="relative pl-14 md:pl-20"
               >
-                <div className="bg-[#FFFFFF] rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02] h-full flex flex-col">
-                  <div className="hidden lg:flex absolute -top-10 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-white items-center justify-center font-heading font-bold text-sm shadow-soft">
-                    {step.number}
+                <div className="absolute left-2 md:left-4 top-0 w-8 h-8 md:w-9 md:h-9 rounded-full bg-primary text-white flex items-center justify-center font-heading font-semibold text-sm shadow-soft z-10">
+                  {step.number}
+                </div>
+                <div className="bg-[#FFFFFF] rounded-lg p-6 md:p-8 border border-soft-lavender/20 hover:border-soft-lavender/50 transition-colors">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-11 h-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                      <step.icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="font-heading text-xl font-semibold text-charcoal">
+                      {step.title}
+                    </h3>
                   </div>
-                  <div className="lg:mt-4 w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
-                    <step.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-heading text-xl font-semibold text-charcoal mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-charcoal/80 text-sm leading-relaxed flex-1">
+                  <p className="text-charcoal/75 text-[15px] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
-              </motion.article>
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

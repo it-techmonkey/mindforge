@@ -49,62 +49,48 @@ const services = [
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-};
-
 export function Services() {
   return (
-    <section id="services" className="py-20 md:py-28 bg-[#FFFFFF] relative">
+    <section id="services" className="py-20 md:py-24 bg-[#FFFFFF] relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent" aria-hidden />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center max-w-2xl mx-auto mb-14"
-        >
-          <p className="text-primary font-semibold text-lg mb-3">
-            What We Do
-          </p>
-          <h2 className="font-heading text-3xl md:text-4xl font-semibold text-charcoal">
-            Services That Drive Results
-          </h2>
-        </motion.div>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 lg:pl-12">
+        <motion.header
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          transition={{ duration: 0.6 }}
+          className="mb-14 text-left"
         >
-          {services.map((s) => (
+          <p className="text-primary font-medium text-sm uppercase tracking-wider mb-2">
+            What we do
+          </p>
+          <h2 className="font-heading text-3xl md:text-4xl font-semibold text-charcoal leading-tight max-w-lg">
+            Services that drive results
+          </h2>
+        </motion.header>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {services.map((s, i) => (
             <motion.article
               key={s.title}
-              variants={item}
-              className="group rounded-2xl bg-off-white/60 hover:bg-[#FFFFFF] border border-soft-lavender/30 p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className="group relative pl-6 border-l-2 border-soft-lavender/40 hover:border-primary/60 transition-colors duration-300 py-4 pr-4"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
-                <s.icon className="h-6 w-6" />
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                <s.icon className="h-5 w-5" />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-charcoal mb-3">
+              <h3 className="font-heading text-lg font-semibold text-charcoal mb-2">
                 {s.title}
               </h3>
-              <p className="text-charcoal/80 leading-relaxed">{s.description}</p>
+              <p className="text-charcoal/75 text-[15px] leading-relaxed">
+                {s.description}
+              </p>
             </motion.article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -11,23 +11,22 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#703043",
-        "primary-hover": "#5a2840",
         "off-white": "#EAE1E1",
         charcoal: "#1A1A1B",
         "soft-lavender": "#C9B7BE",
         "true-black": "#000000",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        heading: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        heading: ["var(--font-fraunces)", "var(--font-dm-sans)", "serif"],
       },
       borderRadius: {
         "2xl": "1rem",
         "3xl": "1.5rem",
       },
       boxShadow: {
-        soft: "0 4px 24px -4px rgba(112, 48, 67, 0.08), 0 8px 16px -6px rgba(0,0,0,0.04)",
-        "soft-lg": "0 12px 40px -8px rgba(112, 48, 67, 0.12), 0 16px 24px -8px rgba(0,0,0,0.06)",
+        soft: "0 2px 16px -2px rgba(112, 48, 67, 0.06), 0 6px 12px -4px rgba(26,26,27,0.04)",
+        "soft-lg": "0 8px 32px -6px rgba(112, 48, 67, 0.1), 0 12px 20px -6px rgba(26,26,27,0.05)",
       },
     },
   },

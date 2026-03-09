@@ -29,7 +29,7 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-20 md:py-28 bg-off-white relative">
+    <section id="case-studies" className="py-20 md:py-26 bg-off-white relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent" aria-hidden />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -37,7 +37,7 @@ export function CaseStudies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          className="text-center max-w-2xl mx-auto mb-12"
         >
           <p className="text-primary font-semibold text-lg mb-3">
             Client Stories
@@ -47,7 +47,7 @@ export function CaseStudies() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {caseStudies.map((c, i) => (
             <motion.article
               key={c.client}
@@ -55,7 +55,7 @@ export function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: "easeOut" }}
-              className="group bg-[#FFFFFF] rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02] border border-soft-lavender/20"
+              className="group bg-[#FFFFFF] rounded-xl p-6 sm:p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.02] border border-soft-lavender/20"
             >
               <div className="flex items-center gap-2 text-primary mb-4">
                 <TrendingUp className="h-5 w-5" />
